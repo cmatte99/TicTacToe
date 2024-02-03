@@ -4,7 +4,7 @@ namespace TicTacToe1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Hello World!");
 
@@ -28,7 +28,13 @@ namespace TicTacToe1
                 if (game.CheckForWinner())
                 {
                     game.PrintBoard();
-                    Console.WriteLine($"Player {game.previouisPlayer} wins!");
+                    if (game.currentPlayer == 1)
+                    {
+                        Console.WriteLine($"Player 2 wins!");
+                    } else
+                    {
+                        Console.WriteLine($"Player 1 wins!");
+                    }
                     game.isGameOver = true;
                 }
                 else if (game.IsBoardFull())
